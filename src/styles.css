@@ -84,10 +84,10 @@ body {
 }
 
 nav {
-  margin: 0 5rem;
+  margin: 1rem 5rem 2rem 5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   img {
     width: 160x;
     height: 80px;
@@ -112,7 +112,7 @@ nav {
   color: white;
   margin: auto;
   width: 80%;
-  height: fit-content;
+  height: 80%;
   background-color: rgb(103, 102, 102);
   border-radius: 20px;
   padding: 2rem;

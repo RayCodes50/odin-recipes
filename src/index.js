@@ -1,4 +1,5 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { greeting, loadHome } from "./greeting.js";
 
 console.log(greeting);
+loadHome();
