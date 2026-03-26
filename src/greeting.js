@@ -1,19 +1,28 @@
+import { append } from "./domUtils.js";
+import ramenImage from "./assets/ramen.jpg";
+
 const loadHome = () => {
   console.log("Hello home Page");
-  // helper function so i do not have to create dom element each time just
-  //use the function
-  function createElement(tag, options = {}) {
-    const el = document.createElement(tag);
-    if (options.className) el.className = options.className;
-    if (options.text) el.textContent = options.text;
-    return el;
-  }
+
   const content = document.getElementById("content");
-  const heroDiv = createElement("div", {
+  content.innerHTML = "";
+
+  const heroDiv = append(content, "div", {
     className: "hero",
-    text: "Hello Ray Odinson",
   });
-  content.appendChild(heroDiv);
+
+  append(heroDiv, "img", {
+    className: "img_ramen",
+    src: ramenImage,
+  });
+  append(heroDiv, "p", {
+    className: "h1",
+    text: "from bowl to soul. hart warming food seasonal and fresh",
+  });
+
+  const wrapInfo = append(content, "div", { className: "wrap" });
+  const openingDiv = append(wrapInfo, "div", { className: "opening" });
+  append(openingDiv, "p", { text: "Opening hours" });
 };
 
 const greeting = "Hello, Odinite";
