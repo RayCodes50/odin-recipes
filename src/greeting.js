@@ -1,5 +1,6 @@
 import { append } from "./domUtils.js";
 import ramenImage from "./assets/ramen.jpg";
+import locationImage from "./assets/map.jpg";
 
 const loadHome = () => {
   console.log("Hello home Page");
@@ -43,6 +44,14 @@ const loadHome = () => {
   openingHours.forEach((li) => {
     append(ulOpen, "li", { text: li });
   });
+  const locationDiv = append(wrapInfo, "div");
+  append(locationDiv, "img", {
+    className: "img_loc",
+    src: locationImage,
+  });
+  const locDetails = append(locationDiv, "div");
+  append(locDetails, "p", { text: "Location" });
+  append(locDetails, "p", { text: "Your mamas bedroom" });
 };
 
 const greeting = "Hello, Odinite";
