@@ -16,4 +16,9 @@ function append(parent, tag, options = {}) {
   return el;
 }
 
-export { append };
+function createCard(item) {
+  const content = document.getElementById("content");
+  append(content, "div", { className });
+}
+
+export { append, createCard };
