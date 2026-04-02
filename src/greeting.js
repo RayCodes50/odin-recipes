@@ -23,6 +23,26 @@ const loadHome = () => {
   const wrapInfo = append(content, "div", { className: "wrap" });
   const openingDiv = append(wrapInfo, "div", { className: "opening" });
   append(openingDiv, "p", { text: "Opening hours" });
+  const ulOpen = append(openingDiv, "ul");
+  const openingHours = [
+    "mon",
+    "tue",
+    "wed",
+    "thu",
+    "fri",
+    "sat",
+    "sun",
+    "9 - 22",
+    "9 - 22",
+    "9 - 22",
+    "9 - 22",
+    "9 - 22",
+    "9 - 23",
+    "9 - 20",
+  ];
+  openingHours.forEach((li) => {
+    append(ulOpen, "li", { text: li });
+  });
 };
 
 const greeting = "Hello, Odinite";
