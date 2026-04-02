@@ -8,6 +8,9 @@ function createElement(tag, options = {}) {
   return el;
 }
 function append(parent, tag, options = {}) {
+  if (!parent) {
+    throw new Error("append: parent element is required");
+  }
   const el = createElement(tag, options);
   parent.appendChild(el);
   return el;
