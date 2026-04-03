@@ -1,3 +1,6 @@
+:root {
+  --cards-line-clr: rgb(138, 131, 131);
+}
 h1 {
   font-size: 4rem;
   font-weight: bold;
@@ -25,9 +28,18 @@ h1 {
   }
 }
 .cards {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid var(--cards-line-clr);
+  border-bottom: 2px solid var(--cards-line-clr);
+  .card:nth-child(even) {
+    border-left: 2px solid var(--cards-line-clr);
+    border-right: 2px solid var(--cards-line-clr);
+  }
   .card {
     text-align: center;
     width: 310px;
+    height: 510px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,6 +83,8 @@ h1 {
       padding: 0.5rem 1.5rem;
       font-weight: bold;
       font-size: 1.2rem;
+      margin-top: auto;
+      margin-bottom: 1rem;
     }
   }
 }

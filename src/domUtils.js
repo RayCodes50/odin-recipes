@@ -17,8 +17,29 @@ function append(parent, tag, options = {}) {
 }
 
 function createCard(item) {
-  const content = document.getElementById("content");
-  append(content, "div", { className });
+  const card = document.createElement("div");
+  card.classList.add("card");
+  card.innerHTML = `
+            <img src="${item.dishImg}" alt="" />
+          <div class="allergens">
+
+          </div>
+          <h2 class="h2">${item.dishName}</h2>
+          <p class="description">${item.dishDes}</p>
+          <p class="kcal">(${item.dishKcal} kcal)</p>
+          <button class="q_view">quick view</button>
+  `;
+  const allergens = card.querySelector(".allergens");
+  if (item.dishNew) {
+    append(allergens, "button", { className: "btn_new", text: "new" });
+  }
+  if (item.dishVegan) {
+    append(allergens, "button", { className: "btn", text: "vg" });
+  }
+  if (item.dishVege) {
+    append(allergens, "button", { className: "btn", text: "v" });
+  }
+  return card;
 }
 
 export { append, createCard };
