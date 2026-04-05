@@ -5,6 +5,7 @@ function createElement(tag, options = {}) {
   if (options.className) el.className = options.className;
   if (options.text) el.textContent = options.text;
   if (options.src) el.src = options.src;
+  if (options.id) el.id = options.id;
   return el;
 }
 function append(parent, tag, options = {}) {

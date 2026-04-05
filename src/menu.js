@@ -1,6 +1,6 @@
 import { append, createCard } from "./domUtils.js";
 import { createSides } from "./menu_sides.js";
-const categories = ["sides", "the main event", "drinks"];
+const categories = ["sides", "the_main_event", "drinks"];
 const createMenu = () => {
   const content = document.getElementById("content");
   content.innerHTML = "";
@@ -17,13 +17,13 @@ const createMenu = () => {
   categories.forEach((cat, index) => {
     const tab = append(menuDiv, "p", {
       className: "title",
-      text: cat,
+      text: cat.split("_").join(" "),
+      id: cat,
     });
     if (index === 0) tab.classList.add("active");
   });
   const cardsWrap = content.querySelector(".cards");
   const sidesCards = createSides();
-  console.log(sidesCards);
   sidesCards.forEach((card) => cardsWrap.appendChild(card));
 };
 

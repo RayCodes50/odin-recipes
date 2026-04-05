@@ -7,7 +7,6 @@ const home = document.getElementById("home");
 const menu = document.getElementById("menu");
 const about = document.getElementById("about");
 const logo = document.getElementById("logo");
-console.log(home);
 loadHome();
 home.classList.add("active");
 
@@ -17,6 +16,17 @@ home.addEventListener("click", () => {
 logo.addEventListener("click", () => {
   loadHome();
 });
-menu.addEventListener("click", () => {
+menu.addEventListener("click", (e) => {
   createMenu();
+  const menus = document.querySelector(".menu");
+  console.log(menus.target);
+  const titles = document.querySelectorAll(".title");
+  titles.forEach((title, e) => {
+    title.addEventListener("click", (e) => {
+      titles.forEach((title) => {
+        title.classList.remove("active");
+      });
+      e.target.classList.add("active");
+    });
+  });
 });

@@ -36,11 +36,8 @@ const sidesMenu = [
 const createSides = () => {
   let cards = [];
   sidesMenu.forEach((side, index) => {
-    console.log(cards);
-
     cards.push(createCard(side));
   });
-  console.log(cards);
   return cards;
 };
 

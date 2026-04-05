@@ -22,7 +22,7 @@ const loadHome = () => {
 
   const wrapInfo = append(content, "div", { className: "wrap" });
   const openingDiv = append(wrapInfo, "div", { className: "opening" });
-  append(openingDiv, "p", { text: "Opening hours" });
+  append(openingDiv, "p", { text: "opening hours" });
   const ulOpen = append(openingDiv, "ul");
   const openingHours = [
     "mon",
@@ -49,8 +49,8 @@ const loadHome = () => {
     src: locationImage,
   });
   const locDetails = append(locationDiv, "div");
-  append(locDetails, "p", { text: "Location" });
-  append(locDetails, "p", { text: "Your mamas bedroom" });
+  append(locDetails, "p", { text: "location" });
+  append(locDetails, "p", { text: "your mamas bedroom" });
 };
 
 const greeting = "Hello, Odinite";
