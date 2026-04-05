@@ -6,7 +6,7 @@ const createMenu = () => {
   content.innerHTML = "";
   content.innerHTML = `
   <div class="hero">
-        <h1>menu</h1>
+        <h2>menu</h2>
         <p>our delicious menu is here</p>
         <div class="line"></div>
       </div>

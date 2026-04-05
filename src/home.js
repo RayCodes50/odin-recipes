@@ -16,8 +16,7 @@ const loadHome = () => {
     className: "img_ramen",
     src: ramenImage,
   });
-  append(heroDiv, "p", {
-    className: "h1",
+  append(heroDiv, "h1", {
     text: "from bowl to soul. hart warming food seasonal and fresh",
   });
 

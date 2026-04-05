@@ -24,7 +24,7 @@ function createCard(item) {
           <div class="allergens">
 
           </div>
-          <h2 class="h2">${item.dishName}</h2>
+          <h3 class="h3">${item.dishName}</h3>
           <p class="description">${item.dishDes}</p>
           <p class="kcal">(${item.dishKcal} kcal)</p>
           <button class="q_view">quick view</button>
