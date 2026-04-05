@@ -1,5 +1,5 @@
 import { append } from "./domUtils.js";
-import ramenImage from "./assets/ramen.jpg";
+import ramenImage from "./assets/ramen.webp";
 import locationImage from "./assets/map.jpg";
 
 const loadHome = () => {

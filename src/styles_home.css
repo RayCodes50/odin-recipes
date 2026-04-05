@@ -89,19 +89,30 @@ nav {
   align-items: center;
   justify-content: space-around;
   img {
-    width: 160x;
+    width: 160px;
     height: 80px;
+    &:hover {
+      cursor: pointer;
+    }
   }
+
   .nav_left {
     display: flex;
     gap: 3rem;
     margin-top: 0.5rem;
     button {
       font-size: 2rem;
-      color: white;
+      font-weight: bold;
+      color: gray;
       background: none;
       border: none;
       cursor: pointer;
+      .active {
+        border-bottom: 2px solid red;
+      }
+    }
+    button:hover {
+      color: white;
     }
   }
 }

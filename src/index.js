@@ -1,8 +1,22 @@
 import "./styles_home.css";
 import "./styles_menu.css";
-import { greeting, loadHome } from "./home.js";
+import { loadHome } from "./home.js";
 import { createMenu } from "./menu.js";
 
-console.log(greeting);
-// loadHome();
-createMenu();
+const home = document.getElementById("home");
+const menu = document.getElementById("menu");
+const about = document.getElementById("about");
+const logo = document.getElementById("logo");
+console.log(home);
+loadHome();
+home.classList.add("active");
+
+home.addEventListener("click", () => {
+  loadHome();
+});
+logo.addEventListener("click", () => {
+  loadHome();
+});
+menu.addEventListener("click", () => {
+  createMenu();
+});
