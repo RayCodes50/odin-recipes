@@ -18,15 +18,31 @@ logo.addEventListener("click", () => {
 });
 menu.addEventListener("click", (e) => {
   createMenu();
+
   const menus = document.querySelector(".menu");
-  console.log(menus.target);
-  const titles = document.querySelectorAll(".title");
-  titles.forEach((title, e) => {
-    title.addEventListener("click", (e) => {
-      titles.forEach((title) => {
-        title.classList.remove("active");
-      });
+  menus.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) {
+      return;
+    }
+    if (e.target.classList.contains("title")) {
+      console.log(e.target.id);
+      const titles = document.querySelectorAll(".title");
+      titles.forEach((title) => title.classList.remove("active"));
+
       e.target.classList.add("active");
-    });
+
+      // logic for more menus
+      // switch (e.target.id) {
+      //   case "sides":
+      //     loadSideMenu();
+      //     break;
+      //   case "the_main_event":
+      //     loadMainDishesMenu();
+      //     break;
+      //   case "drinks":
+      //     loadDrinksMenu();
+      //     break;
+      // }
+    }
   });
 });

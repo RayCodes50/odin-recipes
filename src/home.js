@@ -3,8 +3,6 @@ import ramenImage from "./assets/ramen.webp";
 import locationImage from "./assets/map.jpg";
 
 const loadHome = () => {
-  console.log("Hello home Page");
-
   const content = document.getElementById("content");
   content.innerHTML = "";
 
