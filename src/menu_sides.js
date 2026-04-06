@@ -34,11 +34,16 @@ const sidesMenu = [
 ];
 
 const createSides = () => {
-  let cards = [];
-  sidesMenu.forEach((side, index) => {
-    cards.push(createCard(side));
+  // let cards = [];
+  // sidesMenu.forEach((side, index) => {
+  //   cards.push(createCard(side));
+  // });
+  const cardsContainer = document.createElement("div");
+  cardsContainer.classList.add("cards");
+  sidesMenu.forEach((side) => {
+    cardsContainer.appendChild(createCard(side));
   });
-  return cards;
+  return cardsContainer;
 };
 
 export { createSides };

@@ -11,8 +11,19 @@ const createMenu = () => {
         <div class="line"></div>
       </div>
        <div class="menu"></div>
-     <div class="cards"></div>
+       <div class="wrapSides"></div>
+
 `;
+  const wrap = content.querySelector(".wrapSides");
+  wrap.appendChild(createSides());
+  createTabulation();
+  switchMenu(wrap);
+};
+
+export { createMenu };
+
+function createTabulation() {
+  // creates menu tabulation
   const menuDiv = content.querySelector(".menu");
   categories.forEach((cat, index) => {
     const tab = append(menuDiv, "p", {
@@ -22,9 +33,36 @@ const createMenu = () => {
     });
     if (index === 0) tab.classList.add("active");
   });
-  const cardsWrap = content.querySelector(".cards");
-  const sidesCards = createSides();
-  sidesCards.forEach((card) => cardsWrap.appendChild(card));
-};
+}
 
-export { createMenu };
+function switchMenu(wrap) {
+  // create highligh and generate menu
+  const menus = document.querySelector(".menu");
+  menus.addEventListener("click", (e) => {
+    if (e.target.classList.contains("active")) {
+      return;
+    }
+    if (e.target.classList.contains("title")) {
+      console.log(e.target.id);
+      const titles = document.querySelectorAll(".title");
+      titles.forEach((title) => title.classList.remove("active"));
+
+      e.target.classList.add("active");
+
+      // logic for more menus
+      switch (e.target.id) {
+        case "sides":
+          wrap.innerHTML = "";
+          wrap.appendChild(createSides());
+
+          break;
+        // case "the_main_event":
+        //   loadMainDishesMenu();
+        //   break;
+        // case "drinks":
+        //   loadDrinksMenu();
+        //   break;
+      }
+    }
+  });
+}
