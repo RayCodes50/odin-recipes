@@ -123,7 +123,8 @@ nav {
   color: white;
   margin: auto;
   width: 80%;
-  height: 80%;
+  min-height: 80%;
+  height: fit-content;
   background-color: rgb(103, 102, 102);
   border-radius: 20px;
   padding: 2rem;

@@ -45,7 +45,6 @@ function switchMenu(wrap) {
       return;
     }
     if (e.target.classList.contains("title")) {
-      console.log(e.target.id);
       const titles = document.querySelectorAll(".title");
       titles.forEach((title) => title.classList.remove("active"));
 

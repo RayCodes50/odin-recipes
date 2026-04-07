@@ -1,27 +1,15 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <img id="logo" src="./assets/logo (1).png" alt="" />
-        <div class="nav_left">
-          <button id="home">home</button>
-          <button id="menu">menu</button>
-          <button id="about">about</button>
-        </div>
-      </nav>
-    </header>
-    <div id="content">
-      <div>
+import imgOurStory from "./assets/1695292538-our-story-image.webp";
+import imgOurStoryFood from "./assets/1695292826-our-food-image.webp";
+const aboutMenu = () => {
+  const content = document.getElementById("content");
+  content.innerHTML = "";
+  content.innerHTML = `
+
+      <div class="storyWrap">
+    <div class='middle'>
         <p>about</p>
         <p>wagamama</p>
       </div>
-      <div class="storyWrap">
         <p class="story_h2">our story</p>
         <p>
           a celebration of asian food inspired by fast-paced, japanese ramen
@@ -43,7 +31,7 @@
         </p>
         <div class="img_wrap">
           <figure class="container">
-            <img src="./assets/1695292538-our-story-image.webp" alt="" />
+            <img src="${imgOurStory}" alt="" />
             <figcaption>photographer: ewen spencer</figcaption>
           </figure>
         </div>
@@ -65,11 +53,11 @@
 
         <div class="img_wrap">
           <figure class="container">
-            <img src="./assets/1695292826-our-food-image.webp" alt="" />
+            <img src="${imgOurStoryFood}" alt="" />
             <figcaption>photographer: ewen spencer</figcaption>
           </figure>
         </div>
-      </div>
-    </div>
-  </body>
-</html>
+      </div>`;
+};
+
+export { aboutMenu };
