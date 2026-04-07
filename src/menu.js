@@ -1,5 +1,7 @@
 import { append, createCard } from "./domUtils.js";
 import { createSides } from "./menu_sides.js";
+import { createMains } from "./menu_mains.js";
+import { createDrinks } from "./menu_drinks.js";
 const categories = ["sides", "the_main_event", "drinks"];
 const createMenu = () => {
   const content = document.getElementById("content");
@@ -16,13 +18,13 @@ const createMenu = () => {
 `;
   const wrap = content.querySelector(".wrapSides");
   wrap.appendChild(createSides());
-  createTabulation();
+  createTabulation(content);
   switchMenu(wrap);
 };
 
 export { createMenu };
 
-function createTabulation() {
+function createTabulation(content) {
   // creates menu tabulation
   const menuDiv = content.querySelector(".menu");
   categories.forEach((cat, index) => {
@@ -48,20 +50,21 @@ function switchMenu(wrap) {
       titles.forEach((title) => title.classList.remove("active"));
 
       e.target.classList.add("active");
-
+      createDrinks;
       // logic for more menus
       switch (e.target.id) {
         case "sides":
           wrap.innerHTML = "";
           wrap.appendChild(createSides());
-
           break;
-        // case "the_main_event":
-        //   loadMainDishesMenu();
-        //   break;
-        // case "drinks":
-        //   loadDrinksMenu();
-        //   break;
+        case "the_main_event":
+          wrap.innerHTML = "";
+          wrap.appendChild(createMains());
+          break;
+        case "drinks":
+          wrap.innerHTML = "";
+          wrap.appendChild(createDrinks());
+          break;
       }
     }
   });
