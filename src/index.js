@@ -10,7 +10,7 @@ const menu = document.getElementById("menu");
 const about = document.getElementById("about");
 const logo = document.getElementById("logo");
 loadHome();
-console.log("HEllo RAy lets see that push");
+
 home.classList.add("active");
 
 home.addEventListener("click", () => {
@@ -25,3 +25,4 @@ menu.addEventListener("click", (e) => {
 about.addEventListener("click", (e) => {
   aboutMenu();
 });
+console.log("please work");
